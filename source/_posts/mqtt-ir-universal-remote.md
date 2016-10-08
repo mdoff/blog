@@ -9,7 +9,7 @@ IR remotes are great. You don't have to get up from the couch to switch channel,
 I had some ESP8266 laying around so why not use it to replace my old remotes?
 
 First I used arduino, IR reciever and [IRrecvDumpV2](https://github.com/z3t0/Arduino-IRremote/blob/master/examples/IRrecvDumpV2/IRrecvDumpV2.ino) to decode my radio and TV remote signals.
-Then, after some research, turns out, that there is no lua library for sending IR codes. I didn't want build one by my self, so I decided to use [Arduino IDE](https://github.com/esp8266/Arduino) with  [IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266) and [Arduino MQTT](https://github.com/256dpi/arduino-mqtt) libraries.
+Then, after some research, turns out, that there is no lua library for sending IR codes. I didn't want build one by myself, so I decided to use [Arduino IDE](https://github.com/esp8266/Arduino) with  [IRremoteESP8266](https://github.com/markszabo/IRremoteESP8266) and [Arduino MQTT](https://github.com/256dpi/arduino-mqtt) libraries.
 Parts list:
   - ESP8266
   - AMS1117 3.3V (voltage regulator)
