@@ -24,3 +24,7 @@ Like you see, the circuit it's just ESP8266 connected to diode (with voltage reg
 
 I hava a [MQTT](http://mqtt.org/) [Mosquitto](https://mosquitto.org/) broker setup on my home server, so controlling is super easy.
 You can find [code here](/code/2016/mqtt-ir-remote.ino).
+
+
+### Update 2016-10-13
+I've added 4.7kΩ resistor between IR diode and ESP8266 to protect the board.
