@@ -29,6 +29,10 @@ html, body {
     max-width: 100%;
 }
 
+.blog-content .highlight {
+    overflow-x: scroll;
+}
+
 .blog-more-link {
     text-align: right;
 }
