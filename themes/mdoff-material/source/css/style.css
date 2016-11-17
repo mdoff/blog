@@ -22,7 +22,7 @@ html, body {
     border-radius: 2px;
     padding: 80px 56px;
     margin-bottom: 32px;
-    width: 100%;
+    width: calc(100% - 16px);
 }
 
 .blog-content img {
@@ -74,6 +74,7 @@ html, body {
     padding: 16px 8px;
     margin-left: 0;
     margin-right: 0;
+    width: 100%;
 }
 
 .is-small-screen h1 {

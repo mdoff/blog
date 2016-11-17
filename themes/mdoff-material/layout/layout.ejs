@@ -77,7 +77,7 @@
     <script>
     (function(){
       var resize = function() {
-        document.querySelector('.blog-layout').style['min-height'] = document.body.clientHeight +'px';
+        document.querySelector('.blog-layout').style['min-height'] = window.innerHeight +'px';
         var classNames = document.querySelector('.blog-layout').className;
         var smallClass = 'is-small-screen';
         if (document.body.clientWidth < 500) {
