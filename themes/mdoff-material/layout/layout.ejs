@@ -21,15 +21,14 @@
   %>
     <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <%- css('css/material.blue_grey-light_blue.min') %>
-    <%- css('css/style') %>
+    <%- css('css/material.blue_grey-light_blue.min', 'css/styles') %>
     <%- open_graph() %>
     <% if (theme.favicon){ %>
       <link rel="icon" href="<%-config.root%><%- theme.favicon %>">
     <% } %>
   </head>
 <body class="blog">
-  <div class="blog-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--lime">
+  <div class="blog-layout mdl-layout mdl-layout--fixed-header mdl-js-layout">
   <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--blue-grey">
     <div class="mdl-layout--large-screen-only mdl-layout__header-row"></div>
     <div class="mdl-layout--large-screen-only mdl-layout__header-row">
