@@ -21,7 +21,7 @@ jobs:
           name: Deploy to VPS
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST 'rm -rf $VPS_PATH/public'
+              ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST 'rm -rf '$VPS_PATH'/public'
               scp -o StrictHostKeyChecking=no -pr ~/repo/public $VPS_USER@$VPS_HOST:$VPS_PATH/public
             fi
 
