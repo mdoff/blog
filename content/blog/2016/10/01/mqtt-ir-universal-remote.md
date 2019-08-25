@@ -18,9 +18,9 @@ Parts list:
   - some wires and goldpins
   - universal dotted PCB
 
-![](./ir-esp-schema.png)
-![](./ir-remote-2.jpg)
-![](./ir-remote-1.jpg)
+![IR remote schema](./ir-esp-schema.png)
+![IR remote picture 1](./ir-remote-2.jpg)
+![IR remote picture 2](./ir-remote-1.jpg)
 Like you see, the circuit it's just ESP8266 connected to diode (with voltage regulator).
 
 I hava a [MQTT](https://mqtt.org/) [Mosquitto](https://mosquitto.org/) broker setup on my home server, so controlling is super easy.
