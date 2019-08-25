@@ -19,7 +19,7 @@ const Comments = props => {
       }
     `
   )
-
+  console.log(props.slug)
   return (
     <>
       <Helmet>
@@ -27,7 +27,7 @@ const Comments = props => {
           {`
         var disqus_config = function () {
         this.page.url = '${props.location.href}';
-        this.page.identifier = '${props.location.pathname}';
+        this.page.identifier = '${props.location.pathname.replace(/.*\/(.+)\/$/, '$1')}';
         };
         (function() {
         var d = document, s = d.createElement('script');
