@@ -4,7 +4,7 @@ module.exports = {
     author: `Tomasz Lewiński`,
     description: `Just a programmers blog.`,
     siteUrl: `https://blog.mdoff.net`,
-    discusShortName: `blog-mdoff`,
+    commentsUrl: `https://mdoff-blog-comments.herokuapp.com`,
     social: {
       twitter: `mdoff`,
       github: `mdoff`,
@@ -63,12 +63,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -88,6 +82,12 @@ module.exports = {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: "gatsby-source-custom-comments",
+      options: {
+        url: "https://mdoff-blog-comments.herokuapp.com",
       },
     },
   ],

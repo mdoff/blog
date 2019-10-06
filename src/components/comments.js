@@ -1,43 +1,47 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+
+import CommentForm from "./comment-form"
+
+const formatDate = date => new Date(date).toLocaleString()
+const toSlug = path =>
+  path
+    .replace(/^\//, "")
+    .replace(/\/$/, "")
+    .replace(/\//g, "-")
 
 const Comments = props => {
-  const {
-    site: {
-      siteMetadata: { discusShortName },
-    },
-  } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            discusShortName
-          }
-        }
-      }
-    `
-  )
-  console.log(props.slug)
+  const [localComments, setLocalComments] = useState([])
+  const slug = toSlug(props.location.pathname)
+
+  const comments = [...props.comments, ...localComments]
   return (
     <>
-      <Helmet>
-        <script type="text/javascript">
-          {`
-        var disqus_config = function () {
-        this.page.url = '${props.location.href}';
-        this.page.identifier = '${props.location.pathname.replace(/.*\/(.+)\/$/, '$1')}';
-        };
-        (function() {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://${discusShortName}.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();`}
-        </script>
-      </Helmet>
-      <div id="disqus_thread"></div>
+      <h3>Comments:</h3>
+      {comments.map((comment, index) => (
+        <div
+          key={`comment-${comment.id}`}
+          style={{
+            marginBottom: "16px",
+            padding: "8px",
+            background: index % 2 ? "#FFFFFF" : "#FAFAFA",
+          }}
+        >
+          <div style={{ marginBottom: "8px" }}>
+            <span style={{ fontWeight: "bold" }}>{comment.name}</span>{" "}
+            <span style={{ fontStyle: "italic" }}>
+              ({formatDate(comment.created_at)})
+            </span>
+          </div>
+          <div>{comment.comment}</div>
+        </div>
+      ))}
+      <CommentForm
+        slug={slug}
+        addLocalComment={comment =>
+          setLocalComments([...localComments, comment])
+        }
+      />
     </>
   )
 }
@@ -49,4 +53,13 @@ Comments.propTypes = {
     href: PropTypes.string,
     location: PropTypes.string,
   }).isRequired,
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      slug: PropTypes.string,
+      comment: PropTypes.string,
+      created_at: PropTypes.string,
+    })
+  ),
 }

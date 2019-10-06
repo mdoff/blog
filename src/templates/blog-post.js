@@ -11,8 +11,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
-
+    const { previous, next, comments } = this.props.pageContext
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -76,7 +75,7 @@ class BlogPostTemplate extends React.Component {
             </li>
           </ul>
         </nav>
-        <Comments location={this.props.location} />
+        <Comments comments={comments || []} location={this.props.location} />
       </Layout>
     )
   }
