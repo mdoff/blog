@@ -28,6 +28,7 @@ And that would be it, unless we also want VS Code Intelisense to work. If that's
     "target": "es6",
     "module": "commonjs",
     "jsx": "react",
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "@components/*": ["./src/components/*"]
     }
