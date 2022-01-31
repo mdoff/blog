@@ -2,6 +2,13 @@ import React, { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Loader from "./loader"
 
+const inputStyles = {
+  padding: "4px 6px",
+  width: "100%",
+  borderRadius: "4px",
+  border: "1px solid #afafaf",
+}
+
 const CommentForm = ({ slug, addLocalComment }) => {
   const {
     site: {
@@ -34,7 +41,7 @@ const CommentForm = ({ slug, addLocalComment }) => {
       }),
     })
       .then(data => data.json())
-      .then(comment =>  addLocalComment(comment))
+      .then(comment => addLocalComment(comment))
       .finally(() => {
         setName("")
         setComment("")
@@ -49,7 +56,7 @@ const CommentForm = ({ slug, addLocalComment }) => {
         <label htmlFor="form-name">Name</label>
         <br />
         <input
-          style={{ padding: "4px", width: "100%" }}
+          style={inputStyles}
           id="form-name"
           name="name"
           value={name}
@@ -61,7 +68,7 @@ const CommentForm = ({ slug, addLocalComment }) => {
         <label htmlFor="form-comment">Comment</label>
         <br />
         <textarea
-          style={{ padding: "4px", width: "100%" }}
+          style={inputStyles}
           id="form-comment"
           name="comment"
           value={comment}
