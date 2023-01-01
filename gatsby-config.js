@@ -4,7 +4,7 @@ module.exports = {
     author: `Tomasz Lewiński`,
     description: `Just a programmers blog.`,
     siteUrl: `https://blog.mdoff.net`,
-    commentsUrl: `https://mdoff-blog-comments.herokuapp.com`,
+    commentsUrl: `https://comments.blog.mdoff.net`,
     social: {
       twitter: `mdoff`,
       github: `mdoff`,
@@ -87,7 +87,7 @@ module.exports = {
     {
       resolve: "gatsby-source-custom-comments",
       options: {
-        url: "https://mdoff-blog-comments.herokuapp.com",
+        url: "https://comments.blog.mdoff.net",
       },
     },
   ],
