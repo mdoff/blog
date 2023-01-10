@@ -1,0 +1,18 @@
+baseURL = 'https://blog.mdoff.net/'
+languageCode = 'en-us'
+title = "mdoff's blog"
+theme = 'paper'
+
+[author]
+  name = 'Tomasz Lewiński'
+
+[params]
+  github = 'mdoff'
+  mastodon = 'https://social.lol/@mdoff'
+  rss = true
+
+  author = 'Tomasz Lewiński'
+  name = 'Tomasz Lewiński'
+  bio = 'Software developer, mostly.'
+  avatar = 'lewinski.tomasz@gmail.com'
+  description = 'Hello there'
