@@ -2,6 +2,7 @@ baseURL = 'https://blog.mdoff.net/'
 languageCode = 'en-us'
 title = "mdoff's blog"
 theme = 'paper'
+disqusShortname = 'blog-mdoff'
 
 [author]
   name = 'Tomasz Lewiński'
